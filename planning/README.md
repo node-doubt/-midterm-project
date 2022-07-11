@@ -40,6 +40,7 @@ This product is relevant to students of Code Fellows and supporting their succes
 
 MVP:
 
+- A user can connect to their Canvas account with the slackbot
 - present assignments due that day to the user via the slackbot
 
 Stretch:
@@ -56,4 +57,4 @@ Stretch:
 ### Non-Functional Requirements
 
 - Testability: 
-- Security: 
+- Security: We will use AWS to host our user database
