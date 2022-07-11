@@ -2,12 +2,12 @@
 
 ## UML/Wireframe
 
-## User Stories (at least 5)
+![UML](node-doubt%20uml.svg)
+![database model](database-model.png)
 
-1. Title
-2. User Story sentence
-3. Feature Tasks
-4. Acceptance Tests
+## User Stories 
+
+[Project Management Board](https://trello.com/b/yYzfBtpA/assignment-buster-401-midterm-project)
 
 ## Software Requirements
 
@@ -52,9 +52,7 @@ Stretch:
 
 - a user can use a slash command to access their assignments
 
-#### Data Flow
-
 ### Non-Functional Requirements
 
-- Testability: 
-- Security: We will use AWS to host our user database
+- Testability: We can test our functions in API Gateway. To test Slack connection, we have created our own Slack workspace.
+- Security: We will use AWS to host our user database.
