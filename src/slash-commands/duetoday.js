@@ -17,13 +17,17 @@ const duetoday = async ({ command, ack, say }) => {
     },
   };
   let response = await axios.get(
-    `https://canvas.instructure.com/api/v1/courses/${courseId}/assignments?bucket=upcoming`,
+    `https://canvas.instructure.com/api/v1/courses/${courseId}/assignments?bucket=upcoming&order_by=due_at`,
     config,
   );
 
-  let stringifiedResponse = JSON.stringify(response.data);
+  let str = '';
+  response.data.forEach((item) => {
+    str += item.name + '\n' + item.html_url + '\n';
+  });
+
   // console.log(response.data);
-  await say(stringifiedResponse);
+  await say(str);
 };
 
 module.exports = duetoday;
