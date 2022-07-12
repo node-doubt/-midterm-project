@@ -1,3 +1,16 @@
+# Assignment Buster
+
+## Team
+
+- Ben Choe
+- Cody Davis
+- Dylan Ullrich
+- Katharine Swilley
+
+## Project Description
+
+Assignment Buster is a Slack App that will help students stay up-to-date with their coursework. Students are able to quickly access their assignments due that day via the app.
+
 ## Team Agreement
 
 [Contract](https://docs.google.com/document/d/1Ei7RcvOaHzeyUDbDCYfNEVa91ktPXAih2gQk4I0Fmmc/edit#heading=h.y52avp42q2jv)
