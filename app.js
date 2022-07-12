@@ -6,8 +6,6 @@ require('dotenv').config();
 
 const PORT = process.env.PORT || 3002;
 
-console.log(process.env.SLACK_SIGNING_SECRET);
-
 // Bring in app
 const app = new App({
   signingSecret: process.env.SLACK_SIGNING_SECRET,
