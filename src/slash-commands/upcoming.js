@@ -7,7 +7,7 @@ let token = process.env.CANVAS_TOKEN;
 
 let courseId = process.env.CANVAS_COURSE_ID;
 
-const duetoday = async ({ command, ack, say }) => {
+const upcoming = async ({ command, ack, say }) => {
   // Acknowledge command request
   await ack();
   const config = {
@@ -21,24 +21,23 @@ const duetoday = async ({ command, ack, say }) => {
     config,
   );
 
+  console.log(command);
 
-  let date = new Date();
-  let today = date.toISOString();
+  // let date = new Date();
+  // let today = date.toISOString();
 
-  let todayAss = response.data.filter((item) => {
-    if (item.due_at.split('T')[0] === today.split('T')[0]) {
-      console.log(item);
-    }
-  });
+  // let todayAss = response.data((item) => {
+  //   if (item.due_at.split('T')[0] === today.split('T')[0]) {
+  //     return item;
+  //   }
+  // });
 
-  // console.log(todayAss);
-
-  let str = '`DUE TODAY`\n';
-  todayAss.forEach((item) => {
+  let str = '`UPCOMING ASSIGNMENTS`\n';
+  response.data.forEach((item) => {
     str += item.name + '\n' + item.html_url + '\n';
   });
 
   await say(str);
 };
 
-module.exports = duetoday;
+module.exports = upcoming;
