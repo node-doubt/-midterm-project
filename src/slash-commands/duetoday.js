@@ -21,12 +21,22 @@ const duetoday = async ({ command, ack, say }) => {
     config,
   );
 
-  let str = '';
-  response.data.forEach((item) => {
+  console.log(command);
+
+  let date = new Date();
+  let today = date.toISOString();
+
+  let todayAss = response.data.filter((item) => {
+    if (item.due_at.split('T')[0] === today.split('T')[0]) {
+      return item;
+    }
+  });
+
+  let str = '`DUE TODAY`\n';
+  todayAss.forEach((item) => {
     str += item.name + '\n' + item.html_url + '\n';
   });
 
-  // console.log(response.data);
   await say(str);
 };
 
