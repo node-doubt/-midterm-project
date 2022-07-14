@@ -21,17 +21,6 @@ const upcoming = async ({ command, ack, say }) => {
     config,
   );
 
-  console.log(command);
-
-  // let date = new Date();
-  // let today = date.toISOString();
-
-  // let todayAss = response.data((item) => {
-  //   if (item.due_at.split('T')[0] === today.split('T')[0]) {
-  //     return item;
-  //   }
-  // });
-
   let str = '`UPCOMING ASSIGNMENTS`\n';
   response.data.forEach((item) => {
     str += item.name + '\n' + item.html_url + '\n';

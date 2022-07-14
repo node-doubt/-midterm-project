@@ -1,7 +1,7 @@
 'use strict';
 
 const { App } = require('@slack/bolt');
-
+const { sequelize } = require('./src/userModel/index')
 require('dotenv').config();
 
 const PORT = process.env.PORT || 3002;
@@ -17,7 +17,7 @@ const homePage = require('./src/homePage');
 
 // import slash commands
 const pester = require('./src/slash-commands/pester');
-const duetoday = require('./src/slash-commands/dueToday');
+const duetoday = require('./src/slash-commands/duetoday');
 const upcoming = require('./src/slash-commands/upcoming');
 
 // Home page
@@ -33,6 +33,12 @@ app.error((error) => {
   console.error(error);
 });
 
+sequelize.sync()
+  .then(() => {
+    console.log('Successful connection');
+  })
+  .catch(err => console.error(err));
+  
 // Start app
 (async () => {
   await app.start(PORT || 3002);
