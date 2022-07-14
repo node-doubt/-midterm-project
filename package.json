@@ -128,6 +128,7 @@
     "statuses": "^2.0.1",
     "string.prototype.trimend": "^1.0.5",
     "string.prototype.trimstart": "^1.0.5",
+    "supertest": "^6.2.4",
     "toidentifier": "^1.0.1",
     "tsscmp": "^1.0.6",
     "type-is": "^1.6.18",
@@ -139,7 +140,10 @@
     "ws": "^7.5.8"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node index.js",
+    "lint": "eslint **/*.js",
+    "test": "jest --verbose --coverage",
+    "test-watch": "jest --watchAll --verbose --coverage"
   },
   "repository": {
     "type": "git",
