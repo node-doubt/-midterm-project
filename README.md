@@ -72,14 +72,18 @@ Ben Choe, Cody Davis, Dylan Ullrich, Katharine Swilley
 
 ### Development Experience
 
-#### Process
-
--
-
 #### Roadblocks
 
-- Canvas API limitations
+Working with the Canvas API and Slack presented some challenges.
+
+- Canvas API limitations - without a developer key the API must be accessed by a student API key, which narrows the API endpoints available to us. In a production environment, one would never ask a user to input their API key. Rather an OAuth workflow process would authenticate the user.
+- Heroku v AWS
+  - We attempted to host this app using serverless functions on AWS. Due to time and complexity, Heroku proved to be the best path forward to obtain MVP.
+- *Accepting user data from Slack*
 
 #### Moving Forward
 
--
+The steps we would take to deploy this app in a production environment include:
+
+- Having Canvas Administrator access to issue a needed developer key
+- Implementing an OAuth process to authenticate Canvas users in Slack
