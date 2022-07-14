@@ -1,6 +1,6 @@
 'use strict';
 
-const homePage = async ({ event, client, context }) => {
+const homePage = async ({ event, client, ack, context }) => {
   try {
     /* view.publish is the method that your app uses to push a view to the Home tab */
     await ack();
