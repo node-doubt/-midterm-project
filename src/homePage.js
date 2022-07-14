@@ -19,53 +19,28 @@ const homePage = async ({ event, client, ack, context }) => {
             type: 'header',
             text: {
               type: 'plain_text',
-              text: 'Enter your API key and Class ID below',
+              text: 'Welcome to Assignment Buster!',
               emoji: true,
             },
           },
           {
-            dispatch_action: true,
-            type: 'input',
-            element: {
-              type: 'plain_text_input',
-              action_id: 'plain_text_input-action',
+            type: 'section',
+            text: {
+              type: 'mrkdwn',
+              text: 'Connect your Canvas Account to Slack with Oauth',
             },
-            label: {
-              type: 'plain_text',
-              text: 'Canvas API Key',
-              emoji: true,
-            },
-          },
-          {
-            dispatch_action: true,
-            type: 'input',
-            element: {
-              type: 'plain_text_input',
-              action_id: 'plain_text_input-action',
-            },
-            label: {
-              type: 'plain_text',
-              text: 'Canvas Class ID',
-              emoji: true,
-            },
-          },
-          {
-            "type": "section",
-            "text": {
-              "type": "mrkdwn",
-              "text": "This is a section block with a button."
-            },
-            "accessory": {
-              "type": "button",
-              "text": {
-                "type": "plain_text",
-                "text": "Click Me",
-                "emoji": true
+            accessory: {
+              type: 'button',
+              text: {
+                type: 'plain_text',
+                text: 'CONNECT',
+                emoji: true,
               },
-              "value": "click_me_123",
-              "action_id": "button-action"
-            }
-          }
+              value: 'click_me_123',
+              url: 'https://google.com',
+              action_id: 'button-action',
+            },
+          },
         ],
       },
     });
