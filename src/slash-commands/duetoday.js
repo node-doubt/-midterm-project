@@ -27,9 +27,10 @@ const duetoday = async ({ command, ack, say }) => {
   let date = new Date();
 
   let assignment = response.data.filter((item) => {
-    options.timeZone = 'PST';
-    options.timeZoneName = 'short';
-    const assignDate = new Date(item.due_at).toLocaleDateString(undefined,options);
+    const options = {timeZone: 'PST', timeZoneName: 'short'};
+ 
+    const assignDate = new Date(item.due_at).toLocaleDateString(undefined, options);
+    console.log(assignDate);
     let today = date.toLocaleDateString(undefined, options);
     if (assignDate === today) {
       return item;
