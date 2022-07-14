@@ -3,6 +3,7 @@
 const homePage = async ({ event, client, context }) => {
   try {
     /* view.publish is the method that your app uses to push a view to the Home tab */
+    await ack();
     const result = await client.views.publish({
       /* the user that opened your app's app home */
       user_id: event.user,
