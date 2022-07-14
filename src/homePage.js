@@ -18,7 +18,7 @@ const homePage = async ({ event, client, context }) => {
             type: 'header',
             text: {
               type: 'plain_text',
-              text: 'Enter you API key and Class ID below',
+              text: 'Enter your API key and Class ID below',
               emoji: true,
             },
           },
@@ -31,13 +31,44 @@ const homePage = async ({ event, client, context }) => {
             },
             label: {
               type: 'plain_text',
-              text: 'Label',
+              text: 'Canvas API Key',
               emoji: true,
             },
           },
+          {
+            dispatch_action: true,
+            type: 'input',
+            element: {
+              type: 'plain_text_input',
+              action_id: 'plain_text_input-action',
+            },
+            label: {
+              type: 'plain_text',
+              text: 'Canvas Class ID',
+              emoji: true,
+            },
+          },
+          {
+            "type": "section",
+            "text": {
+              "type": "mrkdwn",
+              "text": "This is a section block with a button."
+            },
+            "accessory": {
+              "type": "button",
+              "text": {
+                "type": "plain_text",
+                "text": "Click Me",
+                "emoji": true
+              },
+              "value": "click_me_123",
+              "action_id": "button-action"
+            }
+          }
         ],
       },
     });
+    console.log(result);
   } catch (error) {
     console.error(error);
   }
