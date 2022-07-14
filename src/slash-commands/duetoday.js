@@ -1,5 +1,6 @@
 'use strict';
 
+const { onlyOptions } = require('@slack/bolt');
 const axios = require('axios');
 require('dotenv').config();
 
@@ -26,8 +27,10 @@ const duetoday = async ({ command, ack, say }) => {
   let date = new Date();
 
   let assignment = response.data.filter((item) => {
-    const assignDate = new Date(item.due_at).toLocaleDateString();
-    let today = date.toLocaleDateString();
+    options.timeZone = 'PST';
+    options.timeZoneName = 'short';
+    const assignDate = new Date(item.due_at).toLocaleDateString(options);
+    let today = date.toLocaleDateString(options);
     if (assignDate === today) {
       return item;
     }
