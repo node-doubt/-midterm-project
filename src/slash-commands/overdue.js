@@ -24,13 +24,14 @@ const overdue = async ({ command, ack, say }) => {
   const overdueAssignments = response.data;
 
   let str = '`OVERDUE ASSIGNMENTS`\n';
+
+  if(overdueAssignments.length === 0){
+    str += 'You have no overdue assignments';
+  } else {
   overdueAssignments.forEach((item) => {
-    if(overdueAssignments.length === 0){
-      str += 'You have no overdue assignments';
-    } else {
       str += item.name + '\n' + item.html_url + '\n';
-    }
   });
+};
 
   await say(str);
 };
