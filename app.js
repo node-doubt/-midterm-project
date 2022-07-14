@@ -16,7 +16,7 @@ const app = new App({
 const homePage = require('./src/homePage');
 
 // import slash commands
-const pester = require('./src/slash-commands/pester');
+const overdue = require('./src/slash-commands/overdue');
 const duetoday = require('./src/slash-commands/duetoday');
 const upcoming = require('./src/slash-commands/upcoming');
 
@@ -24,7 +24,7 @@ const upcoming = require('./src/slash-commands/upcoming');
 app.event('app_home_opened', homePage);
 
 // Commands
-app.command('/pester', pester);
+app.command('/overdue', overdue);
 app.command('/duetoday', duetoday);
 app.command('/upcoming',upcoming);
 

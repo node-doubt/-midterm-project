@@ -21,7 +21,7 @@ const overdue = async ({ command, ack, say }) => {
       config,
   );
 
-  const overdueAssignments = response.data
+  const overdueAssignments = response.data;
 
   let str = '`Overdue Assignments`\n';
   overdueAssignments.forEach((item) => {
