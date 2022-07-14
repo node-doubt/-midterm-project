@@ -17,21 +17,21 @@ const overdue = async ({ command, ack, say }) => {
     },
   };
   let response = await axios.get(
-      `https://canvas.instructure.com/api/v1/courses/${courseId}/assignments?bucket=overdue`,
-      config,
+    `https://canvas.instructure.com/api/v1/courses/${courseId}/assignments?bucket=overdue`,
+    config,
   );
 
   const overdueAssignments = response.data;
 
   let str = '`OVERDUE ASSIGNMENTS`\n';
 
-  if(overdueAssignments.length === 0){
-    str += 'You have no overdue assignments';
+  if (overdueAssignments.length === 0) {
+    str += ':100: Good work! Nothing overdue for you!';
   } else {
-  overdueAssignments.forEach((item) => {
+    overdueAssignments.forEach((item) => {
       str += item.name + '\n' + item.html_url + '\n';
-  });
-};
+    });
+  }
 
   await say(str);
 };
